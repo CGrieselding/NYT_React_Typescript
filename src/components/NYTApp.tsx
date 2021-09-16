@@ -6,27 +6,6 @@ const baseURL: string =
   "https://api.nytimes.com/svc/search/v2/articlesearch.json";
 const key: string = "SCZrRgHl8UAUWFVKK0X6OKogZvvfjure";
 
-// type Result = {
-//   abstract: string;
-//   byline: string;
-//   document_type: string;
-//   headline: string;
-//   keywords: string[];
-//   length: number;
-//   lead_paragraph: string;
-//   multimedia: string[];
-//   news_desk: string;
-//   pub_date: string;
-//   section_name: string;
-//   snippet: string;
-//   source: string;
-//   type_of_material: string;
-//   uri: string;
-//   web_url: string;
-//   word_count: number;
-//   _id: string;
-// };
-
 type StateType = {
   search: string;
   startDate: string;
@@ -84,17 +63,10 @@ export default class NYTApp extends React.Component<{}, StateType> {
   };
 
   render() {
-    // const articles = {
-    //   results: this.state.results,
-    // };
-
-    // const changePage = {
-    //    pageNumber: this.changePageNumber()
-    // }
 
     return (
       <div>
-        <h1 className="mainTitle">New York Times Articles</h1>
+        <h1 className="mainTitle">The New York Times Articles</h1>
         <form onSubmit={(e) => this.handleSubmit(e)}>
           <span>Enter a single search term: </span>
           <input
@@ -120,7 +92,7 @@ export default class NYTApp extends React.Component<{}, StateType> {
             onChange={(e) => this.setState({ endDate: e.target.value })}
           />
           <br />
-          <button className="submit">Submit Search</button>
+          <button className="submit">Search</button>
         </form>
         {this.state.results.length > 0 ? (
           <NYTDisplay

@@ -35,7 +35,7 @@ const NYTDisplay = (props: any) => {
               ))}
             </ul>
             <a href={result.web_url} target="_blank">
-              <button>Read It!</button>
+              <button>Read Article</button>
             </a>
             <hr />
           </div>
